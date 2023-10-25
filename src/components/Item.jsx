@@ -4,27 +4,24 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ title, image, id }) => {
     return (
-        <Center p="0" >
-            <div><Card maxW='sm'>
-                <CardBody>
-                    <Stack mt='6' spacing='3'>
-                        <Heading size='md'>{title} </Heading>
-                        <img src={image} alt="" />
-                    </Stack>
-                </CardBody>
-                <Divider />
+        <div><Card maxW='sm'>
+            <CardBody>
+                <Stack mt='6' spacing='3'>
+                    <Heading size='md'>{title} </Heading>
+                    <img src={image} alt="" />
+                </Stack>
+            </CardBody>
+            <Divider />
+            <Center>
                 <CardFooter>
-                    <ButtonGroup spacing='2'>
-                        <Link to={`/item/${id}`}>
-                            <Button variant='solid' colorScheme='blue'>
-                                Ver detalle
-                            </Button>
-                        </Link>
-
-                    </ButtonGroup>
+                    <Link to={`/item/${id}`}>
+                        <Button variant='solid' colorScheme='blue'>
+                            Ver detalle
+                        </Button>
+                    </Link>
                 </CardFooter>
-            </Card></div>
-        </Center>
+            </Center>
+        </Card></div>
     )
 }
 

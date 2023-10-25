@@ -13,7 +13,7 @@ const ItemDetail = ({ product }) => {
             {
                 filteredProduct.map((p) => {
                     return (
-                        <Center p="0" key={p.id}>
+                        <Center p="0">
                             <div>
                                 <Card maxW='sm'>
                                     <CardBody>
@@ -29,18 +29,19 @@ const ItemDetail = ({ product }) => {
                                         </Stack>
                                     </CardBody>
                                     <Divider />
-                                    <CardFooter>
-                                        <>
+                                    <CardFooter flexDirection='column'>
+                                        <Center>
                                             <ItemCount />
-                                        </>
-                                        <ButtonGroup spacing='2'>
+                                        </Center>
+                                        
+                                        <Center pt='10' spacing='2'>
                                             <Button variant='solid' colorScheme='blue'>
                                                 Buy now
                                             </Button>
                                             <Button variant='ghost' colorScheme='blue'>
                                                 Add to cart
                                             </Button>
-                                        </ButtonGroup>
+                                        </Center>
                                     </CardFooter>
                                 </Card>
                             </div>
