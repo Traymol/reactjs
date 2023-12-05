@@ -14,13 +14,13 @@ const ItemDetail = ({ product }) => {
         };
 
     return (
-        <>
+        <div>
             {
                 filteredProduct.map((p) => {
                     return (
-                        <Center p="0">
+                        <Center p="0" key={p.id}>
                             <div>
-                                <Card maxW='sm' border='1px'>
+                                <Card maxW='sm' border='1px' mt='10' mb='10' bg='#ADD2C2'>
                                     <CardBody>
                                         <Stack mt='6' spacing='3'>
                                             <Heading size='md'>{p.title}</Heading>
@@ -54,7 +54,7 @@ const ItemDetail = ({ product }) => {
                     );
                 })
             }
-        </>
+        </div>
     )
 }
 

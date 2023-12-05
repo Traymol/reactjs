@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Card, Center, Box, Button, Stack, Divider } from '@chakra-ui/react';
+import SendOrders from './SendOrders';
 
 const Cart = () => {
     const { cart, removeFromCart } = useCart();
+    const [cartItems, setCartItems] = useState([]);
+
+    const handleBuy = () => {
+        setCartItems(cart);
+    };
 
     const handleRemoveFromCart = (productId) => {
         removeFromCart(productId);
@@ -12,20 +18,22 @@ const Cart = () => {
     return (
         <div>
             {cart.length === 0 ? (
-                <p>Tu carrito está vacío.</p>
+                <Center fontWeight='bold' m='10' >Tu carrito está vacío.</Center>
             ) : (
                 <Stack>
                     <ul>
-                        {cart.map(product => {
+                        {cart.map(p => {
                             return (
-                                <li key={product.id}>
-                                    <Center>
-                                        <Card maxWidth='200px' border='1px' m='10px' >
+                                <li key={p.id}>
+                                    <Center mt='5' >
+                                        <Card maxWidth='200px' border='1px' m='10px' bg='#ADD2C2'>
                                             <Box m='10px' >
                                                 <div>
-                                                    <p>{product.title}</p>
-                                                    <Divider />
-                                                    <p>${product.price}</p>
+                                                    <p>{p.title}</p>
+                                                    <Divider borderColor='black' />
+                                                    <img src={p.image} />
+                                                    <Divider borderColor='black' />
+                                                    <p>${p.price}</p>
                                                     <Button marginTop='8px' colorScheme='red' onClick={() => handleRemoveFromCart(product.id)}>
                                                         Remover
                                                     </Button>
@@ -39,15 +47,18 @@ const Cart = () => {
                         )}
                     </ul>
                     <Center>
-                        <Button colorScheme='teal' width='120px'>
+                        <Button mb='10' colorScheme='teal' width='120px' onClick={handleBuy} >
                             Comprar
                         </Button>
                     </Center>
+                    {cartItems.length > 0 && <SendOrders cart= {cartItems} />}
                 </Stack>
             )
             }
+
         </div>
     );
 };
 
 export default Cart;
+ 

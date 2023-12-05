@@ -1,15 +1,15 @@
 import React from 'react'
 import CartWidget from './CartWidget'
-import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer } from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem, Flex, Box, Spacer, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <div>
             <Flex bg='#ADD2C2'>
-                <Box borderRadius='4' m='6' p='4' pr='8' pl='8' bg='#CFE795'>
+                <Box borderRadius='4' m='6' p='4' pr='8' pl='8' bg='#026C80'>
                     <Link to={'/'}>
-                        <h1>T&T Store</h1>
+                        <Text fontWeight='bold' color='#A7D3A6' >T&T Store</Text>
                     </Link>
                 </Box>
                 <Spacer />
@@ -19,17 +19,17 @@ const NavBar = () => {
                             Categorías
                         </MenuButton>
                         <MenuList bg='#A7D3A6'>
-                            <Link to={`/category/${"men's clothing"}`}>
-                            <MenuItem bg='#A7D3A6'>Ropa de hombre</MenuItem>
+                            <Link to={`/category/${"componentes"}`}>
+                            <MenuItem bg='#A7D3A6'>Componentes de pc</MenuItem>
                             </Link>
-                            <Link to={`/category/${"women's clothing"}`}>
-                            <MenuItem bg='#A7D3A6'>Ropa de mujer</MenuItem>
+                            <Link to={`/category/${"perifericos"}`}>
+                            <MenuItem bg='#A7D3A6'>Periféricos</MenuItem>
                             </Link>
-                            <Link to={`/category/${"jewelery"}`}>
-                            <MenuItem bg='#A7D3A6'>Joyería</MenuItem>
+                            <Link to={`/category/${"pantallas"}`}>
+                            <MenuItem bg='#A7D3A6'>Pantallas</MenuItem>
                             </Link>
-                            <Link to={`/category/${"electronics"}`}>
-                            <MenuItem bg='#A7D3A6'>Tecnología</MenuItem>
+                            <Link to={`/category/${"consolas"}`}>
+                            <MenuItem bg='#A7D3A6'>Consolas</MenuItem>
                             </Link>
                         </MenuList>
                     </Menu>

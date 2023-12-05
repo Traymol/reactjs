@@ -1,12 +1,12 @@
 import React from 'react'
-import { Card, CardBody, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Center } from '@chakra-ui/react'
+import { Card, CardBody, Stack, Heading, Divider, CardFooter, Button, Center } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 const Item = ({ title, image, id }) => {
     return (
-        <div><Card border='1px' maxW='sm'>
+        <div><Card border='1px' maxW='sm' bg='#ADD2C2'>
             <CardBody>
-                <Stack mt='6' spacing='3'>
+                <Stack mt='6' spacing='5'>
                     <Heading size='md'>{title} </Heading>
                     <img src={image} alt="" />
                 </Stack>
